@@ -9,9 +9,10 @@
   color: var(--darkGrey);
 }
 
+/* 
 .header a.active {
   background-color: #03a9f42b;
-}
+} */
 
 .header nav {
   height: inherit;
