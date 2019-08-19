@@ -1,0 +1,10 @@
+{
+  "name": "dyreportalen-react-app",
+  "version": "1.0.0",
+  "description": "React app initializer for dyreportalen",
+  "main": "index.js",
+  "author": "Dark_Winther",
+  "dependencies": {
+    "create-react-app": "^3.1.1"
+  }
+}
