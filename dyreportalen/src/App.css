@@ -13,3 +13,10 @@ body {
   background: var(--lightGrey);
   margin: 0;
 }
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}

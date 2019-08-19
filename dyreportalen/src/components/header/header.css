@@ -1,18 +1,10 @@
 .header {
   background: var(--white);
   height: 140px;
-    padding: 0 100px
-}
+  padding: 0 100px;
 
-.header a {
-  text-decoration: none;
-  color: var(--darkGrey);
+  --linkHeight: 40px;
 }
-
-/* 
-.header a.active {
-  background-color: #03a9f42b;
-} */
 
 .header nav {
   height: inherit;
@@ -41,16 +33,26 @@
 }
 
 .header ul li {
-  color: var(--darkGrey);
   border-left: 1px solid var(--darkGrey);
-  padding-right: 15px;
-  padding-left: 15px;
-  height: 40px;
+  height: var(--linkHeight);
   display: flex;
   align-items: center;
 }
 
+.header ul li a {
+  padding-right: 15px;
+  padding-left: 15px;
+  text-decoration: none;
+  color: var(--darkGrey);
+  height: inherit;
+  line-height: var(--linkHeight);
+}
+
+.header ul li a.active {
+  background-color: #03a9f42b;
+}
+
 .header .profile-link i {
   display: block;
-  font-size: 40px;
+  font-size: var(--linkHeight);
 }

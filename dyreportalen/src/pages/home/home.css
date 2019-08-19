@@ -1,0 +1,141 @@
+/* Home */
+
+.frontpage {
+  position: relative;
+}
+
+.front-img {
+  width: 100%;
+}
+
+.searchbox {
+  width: 380px;
+  position: absolute;;
+  top: 60px;
+  left: calc(50% - 190px - 12px);
+}
+
+.searchbox label {
+  position: relative;
+}
+
+.searchbox label input {
+  outline: none;
+  width: 100%;
+  padding: 12px 36px;
+  box-sizing: border-box;
+  background-color: #ffffffa1;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+
+.searchbox:hover input {
+  background-color: var(--white);
+}
+
+.searchbox label .search,
+.searchbox label .options {
+  position: absolute;
+}
+
+.searchbox label .search {
+  left: 6px;
+  top: calc(50% - 10px);
+  height: 20px;
+}
+
+.searchbox label .options {
+  cursor: pointer;
+  right: 10px;
+  top: calc(50% - 10px);
+  height: 20px;
+}
+
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+  justify-items: center;
+  padding: 25px 40px 65px;
+}
+
+.suggestions .item h3 {
+  text-align: center;
+  color: #333;
+}
+
+.suggestions .item img {
+  height: 180px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+@keyframes rollout {
+  0% {
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+  }
+  
+  100% {
+      height: 356px;
+  }
+}
+
+@keyframes rollout-reverse {
+  0% {
+      height: 356px;
+  }
+
+  100% {
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+  }
+}
+
+.dropdown {
+  animation: rollout 0.4s;
+  animation-fill-mode: forwards;
+  background-color: var(--white);
+  border-top: 1px solid var(--darkGrey);
+  overflow: hidden;
+  padding: 20px 20px 60px 20px;
+}
+
+.dropdown.backwards {
+  animation: rollout-reverse 0.4s;
+}
+
+.dropdown p {
+  margin: 0;
+}
+
+.dropdown select {
+  color: var(--white);
+  background-color: var(--brightOrange);
+  border-radius: 6px;
+  height: 40px;
+  width: 140px;
+  font-size: 15px;
+}
+
+.dropdown button {
+  display: block;
+  width: 150px;
+  height: 44px;
+  color: var(--white);
+  background: var(--brightOrange);
+  border: 1px solid var(--brightOrange);
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.dropdown .slider {
+  width: 60%;
+}
