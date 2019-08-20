@@ -8,15 +8,15 @@ import logoText from 'static/images/logo-text.png';
 export const Header = () => (
   <header className="header">
     <nav role="navigation">
-      <NavLink className="logo" href="/">
+      <NavLink className="logo" to="/">
           <img src={logo} alt="" />
           <img src={logoText} alt="" />
       </NavLink>
       <ul>
-        <li><NavLink href="#">Forum</NavLink></li>
-        <li><NavLink href="#">Inspiration</NavLink></li>
-        <li><NavLink href="/annoncer">Annoncer</NavLink></li>
-        <li><NavLink href="/kontakt">Kontakt</NavLink></li>
+        <li><NavLink to="#">Forum</NavLink></li>
+        <li><NavLink to="#">Inspiration</NavLink></li>
+        <li><NavLink to="/annoncer">Annoncer</NavLink></li>
+        <li><NavLink to="/kontakt">Kontakt</NavLink></li>
         <li>
             <a className="profile-link" href="#">
               <i className="material-icons">person</i>
