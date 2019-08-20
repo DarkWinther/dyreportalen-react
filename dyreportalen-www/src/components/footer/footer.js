@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './footer.css';
 
 export const Footer = () => (
   <footer className="footer">
       <div>
         <strong>Kontakt</strong>
-        <a href="#">(+45) 46 22 55 47</a>
-        <a href="#">dyreportalen@mail.dk</a>
+        <a href="tel:+45465547">(+45) 46 22 55 47</a>
+        <a href="mailto:dyreportalen@mail.dk">dyreportalen@mail.dk</a>
     </div>
     <div>
         <strong>Internater</strong>
