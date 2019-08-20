@@ -1,0 +1,118 @@
+h3, h2, h1  {
+    margin-top: 80px;
+    color: var(--darkGrey);
+    margin-bottom: 40px;
+}
+
+.container {
+    padding: 0 100px;
+}
+
+.name-input-container input, .email-input-container input, .phone-input-container input {
+    width: 204px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: none;
+    text-shadow: none;
+    outline: none;
+    border: 1px solid var(--orange);
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+.name-input-container, .email-input-container, .phone-input-container {
+    display: inline-block;
+}
+
+.message-textarea-container textarea {
+    width: 100%;
+    border-radius: 16px;
+    outline: none;
+    border: 1px solid var(--orange);
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    max-height: 172px;
+}
+
+.message-textarea-container {
+    width: 650px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#contact-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--darkGrey);
+}
+
+.name-email-phone {
+    display: inline-block;
+}
+
+.name-email-phone > div {
+    margin-right: 15px;
+}
+
+#contact-btn {
+    width: 110px;
+    height: 44px;
+    color: var(--white);
+    background: var(--brightOrange);
+    border: 1px solid var(--brightOrange);
+    border-radius: 6px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.right-side, .left-side {
+    width: 45%;
+    display: inline-block;
+}
+
+.right-side {
+    float: right;
+}
+
+.maps-container {
+    margin-bottom: 40px;
+}
+
+.maps-container img {
+    border-radius: 2px;
+}
+
+@media (max-width:1901px){
+    .message-textarea-container {
+        width: 100%;
+        min-width: 205px;
+    }
+    .right-side {
+        float: none;
+        display: block;
+        min-width: 205px;
+        margin: auto;
+    }
+    .maps-container, .maps-container-image{
+        max-width: 100%;
+        max-height: 100%;
+        min-width: 50px;
+        min-height: 50px;
+        
+    }
+    
+    .bigdiv{
+        text-align: center;
+    }
+    .container{
+        display: inline-block;
+    }
+    
+  }
