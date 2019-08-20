@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './footer.css';
 
 export const Footer = () => (
@@ -10,15 +11,15 @@ export const Footer = () => (
     </div>
     <div>
         <strong>Internater</strong>
-        <a href="#">Hovedstaden</a>
-        <a href="#">Østjylland</a>
-        <a href="#">Nordjylland</a>
+        <Link to="/ekstern-side">Hovedstaden</Link>
+        <Link to="/ekstern-side">Østjylland</Link>
+        <Link to="/ekstern-side">Nordjylland</Link>
     </div>
     <div>
         <strong>Links</strong>
-        <a href="#">Kontakt</a>
-        <a href="#">Vilkår</a>
-        <a href="#">Om dyrene</a>
+        <Link to="/kontakt">Kontakt</Link>
+        <Link to="/vilkår">Vilkår</Link>
+        <Link to="/om-dyrene">Om dyrene</Link>
     </div>
   </footer>
 );
