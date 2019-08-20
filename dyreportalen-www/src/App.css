@@ -20,3 +20,28 @@ body {
   font-family: inherit;
   box-sizing: border-box;
 }
+
+/* NoUIslider */
+
+.noUi-handle {
+  border-radius: 30px;
+  outline: none;
+}
+
+.noUi-touch-area {
+  background: var(--darkGrey);
+  border-radius: 16px;
+  outline: none;
+}
+
+.noUi-connect {
+  background: var(--brightOrange);
+}
+
+.noUi-tooltip {
+  display: none;
+}
+
+.noUi-active .noUi-tooltip {
+  display: block;
+}

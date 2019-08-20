@@ -10,7 +10,6 @@ import krybdyr from 'static/images/daggekko.jpg';
 import gnavere from 'static/images/hamster.jpg';
 
 import noUiSlider from 'nouislider';
-import 'nouislider/distribute/nouislider.css';
 
 export const Home = () => {
   const [showOptions, setShowOptions] = useState(false);
@@ -57,7 +56,7 @@ export const Home = () => {
         <option>Alle typer</option>
       </select>
       <p>Pris</p>
-      <div ref={noUiSliderRef}></div>
+      <div className="slider" ref={noUiSliderRef}></div>
       <button>Søg</button>
     </div>
   );
