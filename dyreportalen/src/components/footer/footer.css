@@ -1,0 +1,29 @@
+.footer {
+    background-color: var(--grey);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 32px;
+    clear: both;
+}
+
+.footer div {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer a,
+.footer strong {
+    color: var(--darkGrey);
+}
+
+.footer a {
+    text-decoration: none;
+    line-height: 1.5em;
+}
+
+.footer strong {
+    font-size: 1.375rem;
+    margin-bottom: 20px;
+}

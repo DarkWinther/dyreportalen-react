@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { Footer } from 'components/footer';
 
 import { Header } from './components/header';
 import { Kontakt } from 'pages/kontakt';
@@ -14,7 +15,7 @@ const NotFound = () => (
 
 const App = () => (
   <BrowserRouter>
-    <Header></Header>
+    <Header />
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/kontakt" component={Kontakt} />
@@ -22,6 +23,7 @@ const App = () => (
       <Route path="/beskedsendt" component={BeskedSendt} />
       <Route component={NotFound} />
     </Switch>
+    <Footer />
   </BrowserRouter>
 );
 
