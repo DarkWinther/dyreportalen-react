@@ -13,8 +13,8 @@ export const Header = () => (
           <img src={logoText} alt="" />
       </NavLink>
       <ul>
-        <li><NavLink to="#">Forum</NavLink></li>
-        <li><NavLink to="#">Inspiration</NavLink></li>
+        <li><NavLink to="/forum">Forum</NavLink></li>
+        <li><NavLink to="/inspiration">Inspiration</NavLink></li>
         <li><NavLink to="/annoncer">Annoncer</NavLink></li>
         <li><NavLink to="/kontakt">Kontakt</NavLink></li>
         <li>
