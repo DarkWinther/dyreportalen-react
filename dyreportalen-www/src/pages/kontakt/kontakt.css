@@ -1,14 +1,18 @@
-h3, h2, h1  {
+.kontakt h3,
+.kontakt h2,
+.kontakt h1  {
     margin-top: 80px;
     color: var(--darkGrey);
     margin-bottom: 40px;
 }
 
-.container {
+.kontakt .container {
     padding: 0 30px;
 }
 
-.name-input-container input, .email-input-container input, .phone-input-container input {
+.kontakt .name-input-container input,
+.kontakt .email-input-container input,
+.kontakt .phone-input-container input {
     width: 204px;
     height: 40px;
     border-radius: 10px;
@@ -22,11 +26,13 @@ h3, h2, h1  {
     padding-left: 5px;
 }
 
-.name-input-container, .email-input-container, .phone-input-container {
+.kontakt .name-input-container,
+.kontakt .email-input-container,
+.kontakt .phone-input-container {
     display: inline-block;
 }
 
-.message-textarea-container textarea {
+.kontakt .message-textarea-container textarea {
     width: 100%;
     border-radius: 16px;
     outline: none;
@@ -39,7 +45,7 @@ h3, h2, h1  {
     max-height: 172px;
 }
 
-.message-textarea-container {
+.kontakt .message-textarea-container {
     width: 650px;
     display: inline-block;
     margin-top: 10px;
@@ -51,11 +57,11 @@ h3, h2, h1  {
     color: var(--darkGrey);
 }
 
-.name-email-phone {
+.kontakt .name-email-phone {
     display: inline-block;
 }
 
-.name-email-phone > div {
+.kontakt .name-email-phone > div {
     margin-right: 15px;
 }
 
@@ -72,36 +78,38 @@ h3, h2, h1  {
     cursor: pointer;
 }
 
-.right-side, .left-side {
+.kontakt .right-side,
+.kontakt .left-side {
     width: 45%;
     display: inline-block;
 }
 
-.right-side {
+.kontakt .right-side {
     margin-right: 110px;
     float: right;
 }
 
-.maps-container {
+.kontakt .maps-container {
     margin-bottom: 40px;
 }
 
-.maps-container img {
+.kontakt .maps-container img {
     border-radius: 2px;
 }
 
 @media (max-width:1400px){
-    .message-textarea-container {
+    .kontakt .message-textarea-container {
         width: 100%;
         min-width: 205px;
     }
-    .right-side {
+    .kontakt .right-side {
         float: none;
         display: block;
         min-width: 205px;
         margin: auto;
     }
-    .maps-container, .maps-container-image{
+    .kontakt .maps-container,
+    .kontakt .maps-container-image{
         max-width: 100%;
         max-height: 100%;
         min-width: 50px;
@@ -109,10 +117,10 @@ h3, h2, h1  {
         
     }
     
-    .bigdiv{
+    .kontakt .bigdiv {
         text-align: center;
     }
-    .container{
+    .kontakt .container{
         display: inline-block;
     }
     

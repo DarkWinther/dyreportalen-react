@@ -1,25 +1,25 @@
 /* Home */
 
-.frontpage {
+.home .frontpage {
   position: relative;
 }
 
-.front-img {
+.home .front-img {
   width: 100%;
 }
 
-.searchbox {
+.home .searchbox {
   width: 380px;
   position: absolute;;
   top: 60px;
   left: calc(50% - 190px - 12px);
 }
 
-.searchbox label {
+.home .searchbox label {
   position: relative;
 }
 
-.searchbox label input {
+.home .searchbox label input {
   outline: none;
   width: 100%;
   padding: 12px 36px;
@@ -30,29 +30,29 @@
 }
 
 
-.searchbox:hover input {
+.home .searchbox:hover input {
   background-color: var(--white);
 }
 
-.searchbox label .search,
-.searchbox label .options {
+.home .searchbox label .search,
+.home .searchbox label .options {
   position: absolute;
 }
 
-.searchbox label .search {
+.home .searchbox label .search {
   left: 6px;
   top: calc(50% - 10px);
   height: 20px;
 }
 
-.searchbox label .options {
+.home .searchbox label .options {
   cursor: pointer;
   right: 10px;
   top: calc(50% - 10px);
   height: 20px;
 }
 
-.suggestions {
+.home .suggestions {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
@@ -60,12 +60,12 @@
   padding: 25px 40px 65px;
 }
 
-.suggestions .item h3 {
+.home .suggestions .item h3 {
   text-align: center;
   color: #333;
 }
 
-.suggestions .item img {
+.home .suggestions .item img {
   height: 180px;
   max-width: 100%;
   object-fit: cover;
@@ -97,7 +97,7 @@
   }
 }
 
-.dropdown {
+.home .dropdown {
   animation: rollout 0.4s;
   animation-fill-mode: forwards;
   background-color: var(--white);
@@ -106,15 +106,15 @@
   padding: 20px 20px 60px 20px;
 }
 
-.dropdown.backwards {
+.home .dropdown.backwards {
   animation: rollout-reverse 0.4s;
 }
 
-.dropdown p {
+.home .dropdown p {
   margin: 0;
 }
 
-.dropdown select {
+.home .dropdown select {
   color: var(--white);
   background-color: var(--brightOrange);
   border-radius: 6px;
@@ -123,7 +123,7 @@
   font-size: 15px;
 }
 
-.dropdown button {
+.home .dropdown button {
   display: block;
   width: 150px;
   height: 44px;
@@ -136,6 +136,6 @@
   cursor: pointer;
 }
 
-.dropdown .slider {
+.home .dropdown .slider {
   width: 60%;
 }

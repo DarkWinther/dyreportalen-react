@@ -1,0 +1,121 @@
+.annoncer {
+  padding: 100px;
+  display: flex;
+}
+
+.annoncer .limit-search {
+  flex-basis: 20%;
+}
+
+.annoncer .limit-search h3 {
+  color: var(--darkGrey);
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.annoncer .limit-search select {
+  color: var(--white);
+  background-color: var(--brightOrange);
+  border-radius: 6px;
+  height: 40px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.annoncer .limit-search p {
+  font-weight: 600;
+  color: var(--darkGrey);
+  margin-bottom: 0;
+}
+
+.annoncer .limit-search button {
+  width: 100%;
+  height: 44px;
+  color: var(--white);
+  background: var(--brightOrange);
+  border: 1px solid var(--brightOrange);
+  border-radius: 6px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.annoncer .content {
+  flex-basis: 60%;
+  margin: 0 20px;
+}
+
+.annoncer .product {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 14px;
+  border: 1px solid var(--darkOrange);
+  overflow: hidden;
+}
+
+.annoncer .product .description {
+  display: flex;
+}
+
+.annoncer .product img {
+  display: block;
+  object-fit: cover;
+  flex: 1 0 33%;
+  margin-right: 10px;
+}
+
+.annoncer .product .title {
+  margin-bottom: 0;
+  margin-top: 6px;
+  font-size: 26px;
+  color: var(--darkOrange);
+  font-weight: 600;
+}
+
+.annoncer .product .location {
+  margin-top: 0;
+  font-weight: 600;
+  color: var(--darkGrey);
+  display: flex;
+  align-items: center;
+}
+
+.annoncer .product .location i {
+  font-size: 20px;
+  color: var(--brightOrange);
+}
+
+.annoncer .product .product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 1px solid var(--darkOrange);
+}
+
+.annoncer .product .product-footer p {
+  margin: 0;
+}
+
+.annoncer .product .product-footer i {
+  color: var(--darkOrange);
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.annoncer .content-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.annoncer .content-header h4 {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.annoncer .ad {
+  flex-basis: 20%;
+}
+
+.annoncer .ad img {
+  width: 100%;
+}

@@ -62,7 +62,7 @@ export const Home = () => {
   );
 
   return (
-  <main>
+  <main className="home">
     <div className="frontpage">
       <div className="searchbox">
         <label>

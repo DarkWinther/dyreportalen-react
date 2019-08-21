@@ -18,7 +18,7 @@ export const Header = () => (
         <li><NavLink to="/annoncer">Annoncer</NavLink></li>
         <li><NavLink to="/kontakt">Kontakt</NavLink></li>
         <li>
-            <a className="profile-link" href="#">
+            <a className="profile-link" href="#Top">
               <i className="material-icons">person</i>
             </a>
         </li>
