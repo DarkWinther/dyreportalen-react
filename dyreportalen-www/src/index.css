@@ -1,8 +1,17 @@
+:root {
+  --brightOrange: #FFB43E;
+  --orange: #EC9E36;
+  --darkOrange: #FF7428;
+  --darkGrey: #333;
+  --grey: #E8E8E8;
+  --lightGrey: #F6F6F6;
+  --white: #FFF;
+}
+
 body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--lightGrey);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +19,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
 }

@@ -4,7 +4,7 @@ import './kontakt.css';
 import map from 'static/images/maps.png';
 
 export const Kontakt = () => (
-  <main>
+  <main className="kontakt">
     <div className="bigdiv">
       <div className="container">
         <div className="left-side">
