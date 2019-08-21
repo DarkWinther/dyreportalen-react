@@ -15,9 +15,9 @@ namespace dyreportalen_webapi
         public string Text { get; set; }
         public string City { get; set; }
         public string ImageUrl { get; set; }
-        public Category category{ get; set; } 
-        public Race race { get; set; }
-        public AdType adType { get; set; }
+        public Category Category{ get; set; } 
+        public Race Race { get; set; }
+        public AdType AdType { get; set; }
     }
 
     public class AdViewModel
@@ -28,9 +28,9 @@ namespace dyreportalen_webapi
         public string Text { get; set; }
         public string City { get; set; }
         public string ImageUrl { get; set; }
-        public Category category { get; set; }
-        public Race race { get; set; }
-        public AdType adType { get; set; }
+        public Category Category { get; set; }
+        public Race Race { get; set; }
+        public AdType AdType { get; set; }
 
         public AdViewModel() { }
 

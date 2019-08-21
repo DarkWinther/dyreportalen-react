@@ -16,7 +16,7 @@ namespace dyreportalen_webapi.Controllers
             using (DyreportalenContext context = new DyreportalenContext())
             {
                 var ads = context.Ads
-                                .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.category.Category_Name, x.race.RaceName, x.adType.AdTypeName })
+                                .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.Category.Category_Name, x.Race.RaceName, x.AdType.AdTypeName })
                                 .ToList();
 
                 if (ads.Count == 0)
@@ -24,7 +24,7 @@ namespace dyreportalen_webapi.Controllers
                     return NotFound();
                 }
 
-                return Ok(ads.ToList());
+                return Ok(ads);
             }
         }
 
@@ -34,7 +34,7 @@ namespace dyreportalen_webapi.Controllers
             {
                 var ads = context.Ads
                             .Where(x => x.Ad_id == id)
-                            .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.category.Category_Name, x.race.RaceName, x.adType.AdTypeName })
+                            .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.Category.Category_Name, x.Race.RaceName, x.AdType.AdTypeName })
                             .SingleOrDefault();
 
                 if (ads == null)
@@ -59,9 +59,9 @@ namespace dyreportalen_webapi.Controllers
                     Text = ad.Text,
                     City = ad.City,
                     ImageUrl = ad.ImageUrl,
-                    category = ad.category,
-                    race = ad.race,
-                    adType = ad.adType              
+                    Category = ad.Category,
+                    Race = ad.Race,
+                    AdType = ad.AdType              
                 });
                 return InjectTryCatch(context.SaveChanges);
             }

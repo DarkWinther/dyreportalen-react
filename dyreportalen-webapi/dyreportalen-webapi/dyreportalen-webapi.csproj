@@ -92,7 +92,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Ad.cs" />
     <Compile Include="Category.cs" />
-    <Compile Include="Configuration\DyreportalenAPIConfig.cs" />
     <Compile Include="Controllers\AdController.cs" />
     <Compile Include="Controllers\RaceController.cs" />
     <Compile Include="Controllers\AdTypeController.cs" />
