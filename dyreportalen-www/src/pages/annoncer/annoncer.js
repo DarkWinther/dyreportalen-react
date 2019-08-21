@@ -15,7 +15,7 @@ const products = [{
   price: 7499,
 }];
 
-export const Annoncer = ({ match }) => {
+export const Annoncer = () => {
   const priceSliderRef = useRef(null);
 
   useEffect(() => {
@@ -88,12 +88,15 @@ export const Annoncer = ({ match }) => {
                 <p>{content}</p>
                 <p>{tags.map((tag, tagIndex) => {
                   if (tags.length > 1) {
-                    return tagIndex === 0 && `${tag} |` ||
-                      tagIndex === tags.length - 1 && ` ${tag}` ||
-                      ` ${tag} |`
-                  } else {
-                    return tag;
+                    if (tagIndex === 0) {
+                      return `${tag} |`;
+                    }
+                    if (tagIndex === tags.length - 1) {
+                      return ` ${tag}`;
+                    }
+                    return ` ${tag} |`;
                   }
+                  return tag;
                 })}</p>
               </div>
             </div>
