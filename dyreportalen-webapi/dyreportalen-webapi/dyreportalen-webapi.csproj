@@ -88,7 +88,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdType.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Ad.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Configuration\DyreportalenAPIConfig.cs" />
+    <Compile Include="Controllers\AdController.cs" />
+    <Compile Include="Controllers\RaceController.cs" />
+    <Compile Include="Controllers\AdTypeController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Migrations\201908210847253_initial.cs" />
+    <Compile Include="Migrations\201908210847253_initial.Designer.cs">
+      <DependentUpon>201908210847253_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Race.cs" />
     <Compile Include="Context\DyreportalenContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -107,8 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908210847253_initial.resx">
+      <DependentUpon>201908210847253_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
