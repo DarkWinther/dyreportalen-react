@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './annoncer.css';
 
 import reklame from 'static/images/reklame.png';
@@ -6,17 +6,29 @@ import testProduct from 'static/images/listing-bulldog.png';
 
 import noUiSlider from 'nouislider';
 
-const products = [{
-  title: 'Stærk engelsk bulldog med flot stamtavle',
-  city: 'Ballerup',
-  country: 'Danmark',
-  content: 'Donec in diam sit amet quam egestas scelerisque. Mauris ornare purus ut augue pharetra vulputate. Maecenas lacus mauris, aliquam vestibulum...',
-  tags: ['Salg', 'Hunde', 'Engelsk bulldog', 'Ballerup'],
-  price: 7499,
-}];
+// const products = [{
+//   title: 'Stærk engelsk bulldog med flot stamtavle',
+//   city: 'Ballerup',
+//   country: 'Danmark',
+//   content: 'Donec in diam sit amet quam egestas scelerisque. Mauris ornare purus ut augue pharetra vulputate. Maecenas lacus mauris, aliquam vestibulum...',
+//   tags: ['Salg', 'Hunde', 'Engelsk bulldog', 'Ballerup'],
+//   price: 7499,
+// }];
 
 export const Annoncer = () => {
   const priceSliderRef = useRef(null);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await fetch('http://localhost:63504/api/ad');
+      const json = await response.json();
+      console.log(json);
+      setProducts(json);
+    };
+    
+    getProducts();
+  }, []);
 
   useEffect(() => {
     noUiSlider.create(priceSliderRef.current, {
@@ -71,9 +83,10 @@ export const Annoncer = () => {
         {products.map(({
           title,
           city,
-          content,
-          country,
-          tags,
+          text,
+          adTypeName,
+          category_Name,
+          raceName,
           price
         }, index) => (
           <div className="product" key={index}>
@@ -83,21 +96,10 @@ export const Annoncer = () => {
                 <strong className="title">{title}</strong>
                 <p className="location">
                   <i className="material-icons">location_on</i>
-                  <span>{`${city}, ${country}`}</span>
+                  <span>{`${city}, Danmark`}</span>
                 </p>
-                <p>{content}</p>
-                <p>{tags.map((tag, tagIndex) => {
-                  if (tags.length > 1) {
-                    if (tagIndex === 0) {
-                      return `${tag} |`;
-                    }
-                    if (tagIndex === tags.length - 1) {
-                      return ` ${tag}`;
-                    }
-                    return ` ${tag} |`;
-                  }
-                  return tag;
-                })}</p>
+                <p>{text}</p>
+                <p>{`${adTypeName} | ${category_Name} | ${raceName} | ${city}`}</p>
               </div>
             </div>
             <div className="product-footer">

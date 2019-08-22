@@ -6,8 +6,11 @@ using System.Net.Http;
 using System.Web.Http;
 using dyreportalen_webapi.Context;
 using System.Data.Entity.Validation;
+using System.Web.Http.Cors;
+
 namespace dyreportalen_webapi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RaceController : ApiController
     {
         public IHttpActionResult GetAll()
