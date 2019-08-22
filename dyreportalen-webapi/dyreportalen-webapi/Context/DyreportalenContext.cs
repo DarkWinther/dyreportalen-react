@@ -12,6 +12,7 @@ namespace dyreportalen_webapi.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<AdType> AdTypes { get; set; }
         public DbSet<Race> Races { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public DyreportalenContext() : base("name=DefaultConnection")
         {

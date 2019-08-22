@@ -19,6 +19,7 @@ namespace dyreportalen_webapi
         public Category Category{ get; set; } 
         public Race Race { get; set; }
         public AdType AdType { get; set; }
+        public User User { get; set; }
     }
 
     public class AdViewModel

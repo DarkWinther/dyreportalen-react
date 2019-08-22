@@ -14,7 +14,7 @@ namespace dyreportalen_webapi.Controllers
         {
             using (DyreportalenContext context = new DyreportalenContext())
             {
-                var race = (from c in context.Races select new { c.Race_id, c.RaceName, c.Category.Category_Name }).ToList();
+                var race = (from c in context.Races select new { c.Race_id, c.RaceName, c.Category }).ToList();
 
                 if (race.Count == 0)
                 {
@@ -32,7 +32,7 @@ namespace dyreportalen_webapi.Controllers
 
                 var race = context.Races
                                 .Where(x => x.Race_id == id)
-                                .Select(x => new { x.Race_id, x.RaceName, x.Category.Category_Name })
+                                .Select(x => new { x.Race_id, x.RaceName, x.Category})
                                 .SingleOrDefault();
 
             if (race == null)

@@ -6,19 +6,29 @@ using System.Net.Http;
 using System.Web.Http;
 using dyreportalen_webapi.Context;
 using System.Data.Entity.Validation;
+using dyreportalen_webapi.Models;
+using System.Web;
+using Newtonsoft.Json;
 
 namespace dyreportalen_webapi.Controllers
 {
     public class AdController : ApiController
     {
+
+        [HttpGet]
         public IHttpActionResult GetAll()
         {
+
             using (DyreportalenContext context = new DyreportalenContext())
             {
+
                 var ads = context.Ads
-                                .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.Category.Category_Name, x.Race.RaceName, x.AdType.AdTypeName })
+                                .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.Price, x.Category.Category_Name, x.Race.RaceName, x.AdType.AdTypeName, x.User })
+                                .OrderByDescending(x => x.Created)
                                 .ToList();
 
+
+                
                 if (ads.Count == 0)
                 {
                     return NotFound();
@@ -28,13 +38,14 @@ namespace dyreportalen_webapi.Controllers
             }
         }
 
+        [HttpGet]
         public IHttpActionResult GetWithId(int id)
         {
             using (DyreportalenContext context = new DyreportalenContext())
             {
                 var ads = context.Ads
                             .Where(x => x.Ad_id == id)
-                            .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.Category.Category_Name, x.Race.RaceName, x.AdType.AdTypeName })
+                            .Select(x => new { x.Ad_id, x.Created, x.Title, x.Text, x.City, x.ImageUrl, x.Price, x.Category.Category_Name, x.Race.RaceName, x.AdType.AdTypeName })
                             .SingleOrDefault();
 
                 if (ads == null)
@@ -46,6 +57,7 @@ namespace dyreportalen_webapi.Controllers
             }
         }
 
+        [HttpPost]
         public IHttpActionResult PostNew(Ad ad)
         {
 
