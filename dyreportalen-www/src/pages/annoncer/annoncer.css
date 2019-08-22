@@ -110,11 +110,37 @@
 .annoncer .content-header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 6px;
 }
 
 .annoncer .content-header h4 {
   font-weight: 400;
-  margin-top: 0;
+  margin: 0;
+}
+
+.annoncer .content-header .pagination {
+  display: flex;
+  align-items: center;
+}
+
+.annoncer .content-header .pagi-btn {
+  cursor: pointer;
+  font-size: 21px;
+  width: 24px;
+  height: 28px;
+  padding: 0;
+  color: var(--white);
+  background: var(--brightOrange);
+  text-align: center;
+  border: 1px solid var(--darkGrey);
+}
+
+.annoncer .content-header .pagi-btn:not(:first-child) {
+  margin-left: 4px;
+}
+
+.annoncer .content-header .pagi-btn i {
+  font-size: 18px;
 }
 
 .annoncer .ad {
