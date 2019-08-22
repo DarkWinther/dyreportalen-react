@@ -50,8 +50,22 @@ export const Annoncer = memo(({ match }) => {
 
     for (let i = 1; i <= Math.min(getMaxPages(), MAX_PAGE_BUTTONS); i++) {
       buttons.push(
-        <NavLink to={`${match.url}/${i}`} className="pagi-btn">{i}</NavLink>
-      )
+        <NavLink key={i} to={`${match.url}/${i}`} className="pagi-btn">
+          {i}
+        </NavLink>
+      );
+    }
+
+    if (getMaxPages() - MAX_PAGE_BUTTONS > 1) {
+      buttons.push(<button key="ellipses" className="pagi-btn">...</button>);
+    }
+
+    if (getMaxPages() > MAX_PAGE_BUTTONS) {
+      buttons.push(
+        <NavLink key={'final'} to={`${match.url}/${getMaxPages()}`} className="pagi-btn">
+          {getMaxPages()}
+        </NavLink>
+      );
     }
 
     return buttons;
