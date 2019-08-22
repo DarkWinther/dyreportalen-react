@@ -2,16 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import './annoncer.css';
 
 import reklame from 'static/images/reklame.png';
-import testProduct from 'static/images/listing-bulldog.png';
 
 import noUiSlider from 'nouislider';
 
-// const products = [{
+// const testProducts = [{
 //   title: 'Stærk engelsk bulldog med flot stamtavle',
 //   city: 'Ballerup',
-//   country: 'Danmark',
-//   content: 'Donec in diam sit amet quam egestas scelerisque. Mauris ornare purus ut augue pharetra vulputate. Maecenas lacus mauris, aliquam vestibulum...',
-//   tags: ['Salg', 'Hunde', 'Engelsk bulldog', 'Ballerup'],
+//   text: 'Donec in diam sit amet quam egestas scelerisque. Mauris ornare purus ut augue pharetra vulputate. Maecenas lacus mauris, aliquam vestibulum...',
+//   adTypeName: "Salg",
+//   category_Name: "Hunde",
+//   raceName: "Chihuahua",
+//   imageUrl: "https://www.zooplus.dk/magasin/CACHE_IMAGES/768/content/uploads/2017/03/fotolia_131738235.jpg",
 //   price: 7499,
 // }];
 
@@ -75,42 +76,45 @@ export const Annoncer = () => {
       </div>
       <section className="content">
         <div className="content-header">
-          <h4>Vi har <b>6</b> kæledyr som matcher dine kriterier</h4>
+          <h4>Vi har <b>{products.length}</b> kæledyr som matcher dine kriterier</h4>
           <div className="pagination">
 
           </div>
         </div>
-        {products.map(({
-          title,
-          city,
-          text,
-          adTypeName,
-          category_Name,
-          raceName,
-          price
-        }, index) => (
-          <div className="product" key={index}>
-            <div className="description">
-              <img src={testProduct} alt="Test" />
+        <div>
+          {products.map(({
+            title,
+            city,
+            text,
+            adTypeName,
+            category_Name,
+            raceName,
+            price,
+            imageUrl,
+          }, index) => (
+            <div className="product" key={index}>
+              <div className="description">
+                <img src={imageUrl} alt="Test" />
+                <div>
+                  <strong className="title">{title}</strong>
+                  <p className="location">
+                    <i className="material-icons">location_on</i>
+                    <span>{`${city}, Danmark`}</span>
+                  </p>
+                  <p>{text}</p>
+                  <p>{`${adTypeName} | ${category_Name} | ${raceName} | ${city}`}</p>
+                </div>
+              </div>
+              <div className="product-footer">
+                  <p>{`kr. ${price},-`}</p>
+                  <i className="material-icons">favorite_border</i>
+              </div>
               <div>
-                <strong className="title">{title}</strong>
-                <p className="location">
-                  <i className="material-icons">location_on</i>
-                  <span>{`${city}, Danmark`}</span>
-                </p>
-                <p>{text}</p>
-                <p>{`${adTypeName} | ${category_Name} | ${raceName} | ${city}`}</p>
+
               </div>
             </div>
-            <div className="product-footer">
-                <p>{`kr. ${price},-`}</p>
-                <i className="material-icons">favorite_border</i>
-            </div>
-            <div>
-
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
       <aside className="ad">
         <a

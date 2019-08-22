@@ -108,10 +108,6 @@
       <DependentUpon>201908220803442_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Paging.cs" />
-    <Compile Include="Migrations\201908221009521_AddedPrice.cs" />
-    <Compile Include="Migrations\201908221009521_AddedPrice.Designer.cs">
-      <DependentUpon>201908221009521_AddedPrice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Race.cs" />
     <Compile Include="Context\DyreportalenContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -136,9 +132,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908220803442_Initial.resx">
       <DependentUpon>201908220803442_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908221009521_AddedPrice.resx">
-      <DependentUpon>201908221009521_AddedPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
