@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { memo, useState, useRef, useEffect } from 'react';
 import './home.css';
 
 import background from 'static/images/nine-dogs-in-grassy-field.jpg';
@@ -11,7 +11,7 @@ import gnavere from 'static/images/hamster.jpg';
 
 import noUiSlider from 'nouislider';
 
-export const Home = () => {
+export const Home = memo(() => {
   const [showOptions, setShowOptions] = useState(false);
   const [slideBackwards, setSlideBackwards] = useState(false);
   const noUiSliderRef = useRef(null);
@@ -101,4 +101,6 @@ export const Home = () => {
       </div>
     </div>
   </main>
-)};
+)});
+
+Home.displayName = "Home";

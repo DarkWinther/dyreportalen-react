@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import './header.css';
 
 import logo from 'static/images/logo.png';
 import logoText from 'static/images/logo-text.png';
 
-export const Header = () => (
+export const Header = memo(() => (
   <header className="header">
     <nav role="navigation">
       <NavLink className="logo" to="/">
@@ -25,4 +25,6 @@ export const Header = () => (
       </ul>
     </nav>
   </header>
-);
+));
+
+Header.displayName = "Header";

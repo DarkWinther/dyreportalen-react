@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Route, Link } from 'react-router-dom';
+import React, { memo, useEffect, useRef, useState, useCallback } from 'react';
+import { Route, Redirect, Link, NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './annoncer.css';
 
 import reklame from 'static/images/reklame.png';
@@ -7,10 +8,12 @@ import reklame from 'static/images/reklame.png';
 import noUiSlider from 'nouislider';
 import { Product } from 'components/product';
 
-export const Annoncer = ({ match }) => {
+const PAGE_SIZE = 3;
+const MAX_PAGE_BUTTONS = 4;
+
+export const Annoncer = memo(({ match }) => {
   const priceSliderRef = useRef(null);
   const [products, setProducts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -18,7 +21,7 @@ export const Annoncer = ({ match }) => {
       const json = await response.json();
       setProducts(json);
     };
-    
+
     getProducts();
   }, []);
 
@@ -34,6 +37,25 @@ export const Annoncer = ({ match }) => {
       step: 100,
     });
   }, [])
+
+  const getMaxPages = useCallback(() => {
+    if (products.length === 0) {
+      return 1;
+    }
+    return Math.ceil(products.length / PAGE_SIZE);
+  }, [products.length]);
+
+  const getPageButtons = useCallback(() => {
+    let buttons = [];
+
+    for (let i = 1; i <= Math.min(getMaxPages(), MAX_PAGE_BUTTONS); i++) {
+      buttons.push(
+        <NavLink to={`${match.url}/${i}`} className="pagi-btn">{i}</NavLink>
+      )
+    }
+
+    return buttons;
+  }, [getMaxPages, match.url]);
 
   return (
     <main className="annoncer">
@@ -66,26 +88,33 @@ export const Annoncer = ({ match }) => {
         <button >Opdater Søgning</button>
       </div>
       <section className="content">
-        <div className="content-header">
-          <h4>Vi har <b>{products.length}</b> kæledyr som matcher dine kriterier</h4>
-          <div className="pagination">
-            <Link to={`${match.url}/${Math.max(1, currentPage - 1)}`} className="pagi-btn">
-              <i className="material-icons">keyboard_arrow_left</i>
-            </Link>
-            <Link to={`${match.url}/${Math.min(Math.floor(products.length / 3), currentPage + 1)}`} className="pagi-btn">
-              <i className="material-icons">keyboard_arrow_right</i>
-            </Link>
-          </div>
-        </div>
-        <div>
-          <Route />
-          {products.map((props, index) => (
-              <Product
-                key={index}
-                {...props}
-              />
-          ))}
-        </div>
+        <Route exact path={match.path} render={() => <Redirect to={`${match.path}/1`} />} />
+        <Route path={`${match.path}/:page`} render={routeProps => {
+          const pageProducts = products.slice((routeProps.match.params.page - 1) * PAGE_SIZE, routeProps.match.params.page * PAGE_SIZE);
+
+          return (
+            <>
+              <div className="content-header">
+                <h4>Vi har <b>{products.length}</b> kæledyr som matcher dine kriterier</h4>
+                <div className="pagination">
+                  <Link to={`${match.url}/${Math.max(1, routeProps.match.params.page - 1 || 1)}`} className="pagi-btn">
+                    <i className="material-icons">keyboard_arrow_left</i>
+                  </Link>
+                  {getPageButtons()}
+                  <Link to={`${match.url}/${Math.min(getMaxPages(), routeProps.match.params.page + 1 || 1)}`} className="pagi-btn">
+                    <i className="material-icons">keyboard_arrow_right</i>
+                  </Link>
+                </div>
+              </div>
+              {pageProducts.map((props, index) => (
+                <Product
+                  key={index}
+                  {...props}
+                />
+              ))}
+            </>
+          );
+        }} />
       </section>
       <aside className="ad">
         <a
@@ -97,4 +126,15 @@ export const Annoncer = ({ match }) => {
       </aside>
     </main>
   );
+});
+
+Annoncer.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.object,
+    isExact: PropTypes.bool,
+    path: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired,
 };
+
+Annoncer.displayName = "Annoncer";

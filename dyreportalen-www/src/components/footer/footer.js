@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import './footer.css';
 
-export const Footer = () => (
+export const Footer = memo(() => (
   <footer className="footer">
       <div>
         <strong>Kontakt</strong>
@@ -22,4 +22,6 @@ export const Footer = () => (
         <Link to="/om-dyrene">Om dyrene</Link>
     </div>
   </footer>
-);
+));
+
+Footer.displayName = "Footer";

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './kontakt.css';
 
 import map from 'static/images/maps.png';
 
-export const Kontakt = () => (
+export const Kontakt = memo(() => (
   <main className="kontakt">
     <div className="bigdiv">
       <div className="container">
@@ -35,9 +35,11 @@ export const Kontakt = () => (
           <h3>Klik på et internat for at skrive til dem</h3>
           <div className="maps-container">
             <img src={map} alt="Maps" className="maps-container-image" />
-          </div>        
+          </div>
         </div>
       </div>
     </div>
   </main>
-);
+));
+
+Kontakt.displayName = "Kontakt";

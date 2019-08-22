@@ -125,14 +125,19 @@
 
 .annoncer .content-header .pagi-btn {
   cursor: pointer;
-  font-size: 21px;
+  font-size: 18px;
   width: 24px;
   height: 28px;
   padding: 0;
   color: var(--white);
-  background: var(--brightOrange);
+  background-color: var(--brightOrange);
   text-align: center;
   border: 1px solid var(--darkGrey);
+  text-decoration: none;
+}
+
+.annoncer .content-header .pagi-btn.active {
+  background-color: var(--darkOrange);
 }
 
 .annoncer .content-header .pagi-btn:not(:first-child) {
@@ -140,7 +145,7 @@
 }
 
 .annoncer .content-header .pagi-btn i {
-  font-size: 18px;
+  vertical-align: middle;
 }
 
 .annoncer .ad {
