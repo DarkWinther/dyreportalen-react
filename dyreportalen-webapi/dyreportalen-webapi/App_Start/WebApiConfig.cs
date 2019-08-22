@@ -32,6 +32,9 @@ namespace dyreportalen_webapi
             //For converting data in Camel Case  
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new CamelCasePropertyNamesContractResolver();
+
+            //Enable Cross Origin
+            config.EnableCors();
         }
     }
 }

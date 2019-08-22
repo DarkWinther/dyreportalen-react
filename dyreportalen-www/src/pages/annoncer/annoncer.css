@@ -52,6 +52,10 @@
   overflow: hidden;
 }
 
+.annoncer .product:not(:first-child) {
+  margin-top: 20px;
+}
+
 .annoncer .product .description {
   display: flex;
 }
@@ -61,6 +65,7 @@
   object-fit: cover;
   flex: 1 0 33%;
   margin-right: 10px;
+  width: 33%;
 }
 
 .annoncer .product .title {
