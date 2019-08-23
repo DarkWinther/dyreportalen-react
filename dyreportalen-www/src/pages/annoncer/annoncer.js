@@ -46,7 +46,7 @@ export const Annoncer = memo(({ match }) => {
   }, [products.length]);
 
   const getPageButtons = useCallback(() => {
-    let buttons = [];
+    const buttons = [];
 
     for (let i = 1; i <= Math.min(getMaxPages(), MAX_PAGE_BUTTONS); i++) {
       buttons.push(
